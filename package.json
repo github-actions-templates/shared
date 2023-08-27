@@ -14,7 +14,8 @@
     "vite-svg-loader": "^4.0.0"
   },
   "devDependencies": {
-    "@iconify-json/logos": "^1.1.34"
+    "@iconify-json/logos": "^1.1.34",
+    "playwright-chromium": "^1.37.1"
   },
   "slidev": {
     "colorSchema": "dark"

@@ -65,6 +65,10 @@ level: 2
 
 <h4 v-click class="mt-6">对于 <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">开源</span> 项目，<span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">无限制</span>。</h4>
 
+<p v-click>
+开源就可以薅羊毛……
+</p>
+
 <p v-click class="text-gray-400 text-1">
 详看：<a href="https://github.com/settings/billing/plans" target="_blank">个人计划</a> | <a href="https://github.com/organizations/addcnos/billing/plans" target="_blank">组织计划</a>
 </p>

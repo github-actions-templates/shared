@@ -20,7 +20,7 @@ T8 - 吴温炎
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Show Time <carbon:arrow-right class="inline"/>
+    GO <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
@@ -386,6 +386,15 @@ hide: false
 
 ---
 layout: intro
+---
+
+# QA
+
+<p>畅所欲言</p>
+
+---
+layout: intro
+hideInToc: true
 ---
 
 # The End
