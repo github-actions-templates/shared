@@ -8,10 +8,7 @@
   },
   "dependencies": {
     "@slidev/cli": "^0.42.11",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest",
     "slidev-theme-penguin": "^2.1.0",
-    "unocss": "^0.55.3",
     "vite-svg-loader": "^4.0.0"
   },
   "devDependencies": {
