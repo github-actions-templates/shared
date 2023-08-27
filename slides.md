@@ -10,10 +10,6 @@ drawings:
   persist: true
 transition: slide-left
 title: Github Actions
-hideInToc: true
----
-
----
 layout: intro
 hideInToc: true
 ---
@@ -40,6 +36,10 @@ hideInToc: true
 
 ---
 src: ./pages/what.md
+---
+
+---
+src: ./pages/basic.md
 ---
 
 ---
@@ -385,7 +385,9 @@ hide: false
 ---
 
 ---
-layout: end
+layout: intro
 ---
 
-# Thanks
+# The End
+
+<p>Thanks</p>

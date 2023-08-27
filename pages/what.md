@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Github Actions?
+# Github Actions 是什么
 
 <div class="flex">
     <div class="mr-15 pt-4 opacity-50"><img width="650" src="/assets/images/actions-icon-actions.svg" /></div>
@@ -28,7 +28,7 @@ hideInToc: true
 level: 2
 ---
 
-# Features（todo:图标完善，内容丰富）
+# Features（todo:图标完善，丰富图文介绍）
 
 <v-clicks>
 
