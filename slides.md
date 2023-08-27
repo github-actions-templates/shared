@@ -1,15 +1,13 @@
 ---
 theme: penguin
 colorSchema: dark
-background: https://source.unsplash.com/collection/94734566/1920x1080
-class: text-center
 highlighter: shiki
 lineNumbers: false
 info: false
-drawings:
-  persist: true
 transition: slide-left
 title: Github Actions
+drawings:
+  persist: false
 layout: intro
 hideInToc: true
 ---
@@ -33,6 +31,10 @@ hideInToc: true
 # TOC
 
 <Toc></Toc>
+
+---
+src: ./pages/why.md
+---
 
 ---
 src: ./pages/what.md
@@ -66,12 +68,12 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 
 ### Keyboard Shortcuts
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
+|                                                     |                             |
+|-----------------------------------------------------|-----------------------------|
+| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
 | <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+| <kbd>up</kbd>                                       | previous slide              |
+| <kbd>down</kbd>                                     | next slide                  |
 
 <!-- https://sli.dev/guide/animations.html#click-animations -->
 <img
@@ -384,13 +386,18 @@ src: ./pages/multiple-entries.md
 hide: false
 ---
 
+
+---
+src: ./pages/reference.md
+---
+
 ---
 layout: intro
 ---
 
 # QA
 
-<p>畅所欲言</p>
+<p>ChatGPT 在手，解惑无忧</p>
 
 ---
 layout: intro
