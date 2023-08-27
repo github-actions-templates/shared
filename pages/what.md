@@ -22,42 +22,49 @@ layout: default
     </div>
 </div>
 
+---
+layout: default
+hideInToc: true
+level: 2
+---
+
+# Features（todo:图标完善，内容丰富）
+
+<v-clicks>
+
+- 📝 **操作系统** - 适用于 Linux、macOS、Windows、ARM 和容器；直接在虚拟机或容器内运行。
+- 🎨 **矩阵构建** - 通过矩阵工作流程可以同时跨多个操作系统和运行时版本进行测试，从而节省时间。
+- 🧑‍💻 **任何语言** - 支持 Node.js、Python、Java、Ruby、PHP、Go、Rust、.NET 等。
+- 📦 **实时日志** - 查看您的工作流程实时运行的颜色和表情符号。
+- 📦 **秘钥存储** - 通过将包含 Git 流程的工作流程文件编码到您的存储库中，自动执行您的软件开发实践。
+- 📦 **多容器测试** - compose 只需将一些内容添加到工作流程文件中即可在工作流程中测试您的 Web 服务及其数据库。
+- 📦 **社区支持的工作流程** - 通过在工作流程文件中定义自定义环境变量来保护您的秘密。
+
+</v-clicks>
+
+<p v-click class="text-gray-400 text-1">
+详看：<a href="https://github.com/features/actions" target="_blank">官方介绍</a>
+</p>
 
 ---
 layout: default
+hideInToc: true
+level: 2
 ---
 
+# Pricing
 
-# Features
+<v-clicks>
 
-- 📝 **主流操作系统** - 适用于 Linux、macOS、Windows、ARM 和容器；直接在虚拟机或容器内运行。
-- 🎨 **矩阵构建** - 通过矩阵工作流程可以同时跨多个操作系统和运行时版本进行测试，从而节省时间。
-- 🧑‍💻 **任何语言** - 支持 Node.js、Python、Java、Ruby、PHP、Go、Rust、.NET 等。
+- **免费版** - 2000 分钟/月
+- **Pro** - 3000 分钟/月（其中 Pro 为 4 美元/月）
+- **Team** - 3000 分钟/月（其中 Team 为 4 美元/用户/月）
+- **Enterprise** - 50000 分钟/月（其中 Enterprise 为 21 美元/用户/月）
 
-<br>
----
----
-<br>
+</v-clicks>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+<h4 v-click class="mt-6">对于 <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">开源</span> 项目，<span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">无限制</span>。</h4>
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
+<p v-click class="text-gray-400 text-1">
+详看：<a href="https://github.com/settings/billing/plans" target="_blank">个人计划</a> | <a href="https://github.com/organizations/addcnos/billing/plans" target="_blank">组织计划</a>
+</p>
