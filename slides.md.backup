@@ -1,21 +1,18 @@
 ---
-theme: penguin
-colorSchema: dark
+theme: default
 background: https://source.unsplash.com/collection/94734566/1920x1080
 class: text-center
 highlighter: shiki
 lineNumbers: false
-info: false
-drawings:
-  persist: true
-transition: slide-left
-title: Github Actions
-hideInToc: true
----
+info: |
+  ## Slidev Starter Template
+  Presentation slides for developers.
 
----
-layout: intro
-hideInToc: true
+  Learn more at [Sli.dev](https://sli.dev)
+drawings:
+  persist: false
+transition: slide-left
+title: Welcome to Slidev
 ---
 
 # Github Actions
@@ -30,17 +27,45 @@ T8 - 吴温炎
 
 ---
 transition: fade-out
-layout: default
-hideInToc: true
 ---
 
-# TOC
+# What is Slidev?
 
-<Toc></Toc>
+Slidev is a slides maker and presenter designed for developers, consist of the following features
 
----
-src: ./pages/what.md
----
+- 📝 **Text-based** - focus on the content with Markdown, and then style them later
+- 🎨 **Themable** - theme can be shared and used with npm packages
+- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
+- 🤹 **Interactive** - embedding Vue components to enhance your expressions
+- 🎥 **Recording** - built-in recording and camera view
+- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
+- 🛠 **Hackable** - anything possible on a webpage
+
+<br>
+<br>
+
+Read more about [Why Slidev?](https://sli.dev/guide/why)
+
+<!--
+You can have `style` tag in markdown to override the style for the current page.
+Learn more: https://sli.dev/guide/syntax#embedded-styles
+-->
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+Here is another comment.
+-->
 
 ---
 layout: default
@@ -385,7 +410,10 @@ hide: false
 ---
 
 ---
-layout: end
+layout: center
+class: text-center
 ---
 
-# Thanks
+# Learn More
+
+[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
