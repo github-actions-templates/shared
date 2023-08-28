@@ -1,3 +1,8 @@
-.slidev-layout pre{
+.slidev-layout pre {
     font-weight: normal;
+}
+
+/*!* fix penguin theme *!*/
+.slides-overview #slide-container {
+    height: 166px !important;
 }
