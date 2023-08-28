@@ -23,13 +23,10 @@ layout: default
 </div>
 
 ---
-layout: default
-hideInToc: true
-level: 2
----
 
-# Features（todo:图标完善，丰富图文介绍）
+## Features（todo:图标完善，丰富图文介绍）
 
+<div class="mt-8">
 <v-clicks>
 
 - 📝 **操作系统** - 适用于 Linux、macOS、Windows、ARM 和容器；直接在虚拟机或容器内运行。
@@ -41,6 +38,7 @@ level: 2
 - 📦 **社区支持的工作流程** - GitHub Actions 连接您的所有工具，以自动化开发工作流程的每一步。
 
 </v-clicks>
+</div>
 
 <p v-click class="text-gray-400 text-1">
 详看：<a href="https://github.com/features/actions" target="_blank">官方介绍</a>
