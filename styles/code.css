@@ -2,7 +2,17 @@
     font-weight: normal;
 }
 
-/*!* fix penguin theme *!*/
+/* fix penguin theme */
 .slides-overview #slide-container {
-    height: 166px !important;
+    height: 168px !important;
+}
+
+.footnotes-sep {
+    @apply mt-20 opacity-10;
+}
+.footnotes {
+    @apply text-sm opacity-75;
+}
+.footnote-backref {
+    display: none;
 }

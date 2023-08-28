@@ -69,6 +69,10 @@ level: 2
 开源就可以薅羊毛……
 </p>
 
-<p v-click class="text-gray-400 text-1">
-详看：<a href="https://github.com/settings/billing/plans" target="_blank">个人计划</a> | <a href="https://github.com/organizations/addcnos/billing/plans" target="_blank">组织计划</a>
-</p>
+<div v-click class="text-gray-400 footnotes">
+
+<hr class="footnotes-sep" />
+
+详见：[个人计划](https://github.com/settings/billing/plans) | [组织计划](https://github.com/organizations/addcnos/billing/plans)
+
+</div>
