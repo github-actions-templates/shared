@@ -30,18 +30,31 @@ hideInToc: true
 
 # TOC
 
+<div class="flex pt-10">
+
+<div class="mr-10">
+
+<img src="/assets/images/actions-icon-actions.svg" class="h-50 opacity-30" />
+
+</div>
+
 <Toc maxDepth="1"></Toc>
 
----
-src: ./pages/why.md
----
 
----
-src: ./pages/what.md
----
+</div>
+
+[//]: # (---)
+
+[//]: # (src: ./pages/why.md)
+
+[//]: # (---)
 
 ---
 src: ./pages/basic.md
+---
+
+---
+src: ./pages/started.md
 ---
 
 ---
@@ -49,7 +62,15 @@ src: ./pages/scene.md
 ---
 
 ---
-src: ./pages/amusing.md
+src: ./pages/advanced.md
+---
+
+---
+src: ./pages/practice.md
+---
+
+---
+src: ./pages/case.md
 ---
 
 ---

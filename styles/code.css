@@ -17,8 +17,21 @@
     display: none;
 }
 
-h1 small{
-    @apply text-xl opacity-75;
+h2 {
+    @apply mb-8
+    @apply text-secondary;
+}
+
+h2 small{
+    @apply text-xl opacity-70;
     @apply ml-1;
     @apply font-normal;
+}
+
+.code-wrap .slidev-code-wrapper > pre {
+    max-width: none;
+}
+
+.slidev-layout blockquote{
+    @apply mt-2 mb-2;
 }

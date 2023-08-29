@@ -2,20 +2,23 @@
 layout: default
 ---
 
-# 常见场景 <sub>自动化测试</sub>
+# 应用场景
 
-## 自动化测试 <small>（CI）</small>
+- 自动化构建和测试
+- 自动化部署
+- 发布软件包和文档
+- 定时任务和计划作业
+- 集成第三方服务
+
+---
+
+## 应用场景 <small>自动化构建和测试</small>
 
 222
 
 ---
 
----
-layout: default
-hideInToc: true
----
-
-# 常见场景 <small>自动化部署</small>
+## 应用场景 <small>自动化部署</small>
 
 > 以为 Hexo 举例
 
@@ -77,4 +80,12 @@ jobs:
 
 ---
 
-## 123123
+## 应用场景 <small>发布软件包和文档</small>
+
+---
+
+## 应用场景 <small>定时任务和计划作业</small>
+
+---
+
+## 应用场景 <small>集成第三方服务</small>
