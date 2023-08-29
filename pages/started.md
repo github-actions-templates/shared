@@ -43,7 +43,6 @@ layout: default
 
 <div class="overflow-auto h-110 code-wrap">
 
-
 ```yaml
 # This is a basic workflow to help you get started with Actions
 
