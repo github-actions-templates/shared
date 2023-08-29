@@ -49,6 +49,10 @@ src: ./pages/scene.md
 ---
 
 ---
+src: ./pages/amusing.md
+---
+
+---
 src: ./pages/reference.md
 ---
 

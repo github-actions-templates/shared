@@ -16,3 +16,9 @@
 .footnote-backref {
     display: none;
 }
+
+h1 small{
+    @apply text-xl opacity-75;
+    @apply ml-1;
+    @apply font-normal;
+}
