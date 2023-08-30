@@ -1,3 +1,7 @@
+.slidev-layout h1, .slidev-layout h2, .slidev-layout h3, .slidev-layout h4, .slidev-layout.intro h1{
+    font-family: "Apple Braille", Arial, sans-serif;
+}
+
 .slidev-layout pre {
     font-weight: normal;
 }

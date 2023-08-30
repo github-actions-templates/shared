@@ -36,6 +36,8 @@ layout: default
 </div>
 
 ---
+hideInToc: true
+---
 
 - 方式二：手动创建（适合有经验的用户）
 
