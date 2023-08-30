@@ -4,7 +4,7 @@ layout: default
 
 # 上手指南
 
-- 创建 `workflows`
+- 创建工作流(`workflows`)
 - `workflows` 文件的结构和语法
 - 触发器和事件
 - 任务和步骤
@@ -46,38 +46,23 @@ hideInToc: true
 <div class="overflow-auto h-110 code-wrap">
 
 ```yaml
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
@@ -92,39 +77,35 @@ jobs:
 
 <div class="overflow-auto h-100 code-wrap">
 
-```yaml {all|1-3|5-11|all}
-# This is a basic workflow to help you get started with Actions
-
+```yaml
+# 工作流的名称
 name: CI
 
-# Controls when the workflow will run
+# 触发器
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # 当往 main 分支推送代码，或发起合并请求时触发
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# 任务列表（此处只列了一个）
 jobs:
-  # This workflow contains a single job called "build"
+  # 任务名称，比如此处为 build 任务；多个任务默认是并行，可通过配置建立依赖关系
   build:
-    # The type of runner that the job will run on
+    # 任务运行的服务器环境
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    
+    # 任务运行的步骤
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # 拉取代码，此处使用的时第三方（虽然是官方组织）的 actions 组件
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      # 执行一个单行命令（其中 name 为该命令的名称）
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
+      # 执行多行命令，用 | 隔开
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
@@ -132,6 +113,20 @@ jobs:
 ```
 
 </div>
+
+---
+
+<img src="/assets/images/started-1.png" class="h-100" />
+
+---
+
+<img src="/assets/images/started-2.png" class="h-100" />
+
+<p v-click class="text-1">
+
+示例地址：[传送门](https://github.com/github-actions-templates/blank/actions/runs/6019109272/job/16328450482)
+
+</p>
 
 ---
 

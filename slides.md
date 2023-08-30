@@ -14,7 +14,7 @@ hideInToc: true
 
 # Github Actions
 
-T8 - 吴温炎
+FLC WU
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -83,7 +83,7 @@ layout: intro
 
 # QA
 
-<p>ChatGPT 在手，解惑无忧</p>
+<p>“ChatGPT” 在手，解惑无忧</p>
 
 ---
 layout: intro
