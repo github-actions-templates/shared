@@ -25,13 +25,17 @@ jobs:
       - name: Restore file modification time
         run: git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Node
         uses: actions/setup-node@v3
         with:
-          node-version: '15'
+          node-version: '16'
 
       - name: Install Package
-        run: npm install
+        run: pnpm install
 
       - name: Install Golang
         uses: actions/setup-go@v3
