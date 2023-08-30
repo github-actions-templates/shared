@@ -7,6 +7,8 @@ layout: default
 - 官方网站：https://github.com/features/actions
 - 官方文档：https://docs.github.com/zh/actions
 - 官方的一些 Actions：https://github.com/actions
+- Github Actions 本地调试（⭐48K）：https://github.com/nektos/act
+- 搭配官方的 CLI 工具：https://github.com/cli/cli
 
 ---
 

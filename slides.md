@@ -14,7 +14,7 @@ hideInToc: true
 
 # Github Actions
 
-FLC WU
+吴温炎
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -23,25 +23,13 @@ FLC WU
 </div>
 
 ---
-transition: fade-out
-layout: default
-hideInToc: true
+src: ./pages/banner.md
 ---
 
-# TOC
+---
+src: ./pages/toc.md
+---
 
-<div class="flex pt-10">
-
-<div class="mr-10">
-
-<img src="/assets/images/actions-icon-actions.svg" class="h-50 opacity-30" />
-
-</div>
-
-<Toc maxDepth="1"></Toc>
-
-
-</div>
 
 [//]: # (---)
 

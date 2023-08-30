@@ -32,6 +32,10 @@ h2 small{
     @apply font-normal;
 }
 
+h3, h4, h5 {
+    @apply mb-4
+}
+
 .code-wrap .slidev-code-wrapper > pre {
     max-width: none;
 }
