@@ -96,7 +96,7 @@ jobs:
     # 任务运行的服务器环境
     runs-on: ubuntu-latest
     
-    # 任务运行的步骤
+    # 任务运行的步骤，此处是串行
     steps:
       # 拉取代码，此处使用的时第三方（虽然是官方组织）的 actions 组件
       - uses: actions/checkout@v3

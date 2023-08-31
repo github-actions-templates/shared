@@ -6,6 +6,14 @@
     font-weight: normal;
 }
 
+.slidev-layout code {
+    font-size: 1rem !important;
+}
+
+.slidev-layout .slidev-code-wrapper code {
+    font-size: 0.65rem !important;
+}
+
 /* fix penguin theme */
 .slides-overview #slide-container {
     height: 168px !important;

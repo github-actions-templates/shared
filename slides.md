@@ -6,6 +6,7 @@ lineNumbers: false
 info: false
 transition: slide-left
 title: Github Actions
+favicon: /favicon.svg
 drawings:
   persist: false
 layout: intro
