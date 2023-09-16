@@ -96,9 +96,7 @@ jobs:
 
 ## 应用场景 <small>自动化部署</small>
 
-> 以为 Hexo 举例
-
-<div grid="~ cols-2 gap-4">
+<div class="flex gap-4">
 
 <div class="overflow-auto h-100">
 
@@ -144,13 +142,18 @@ jobs:
 ```
 </div>
 
-<div>
 
-- `on` - 触发条件: `push` 事件，且分支为 `main`
-- `jobs` - 作业
-- `${{ secrets.GITHUB_TOKEN }}` - [自动令牌认证](https://docs.github.com/en/actions/security-guides/automatic-token-authentication), GitHub 会自动创建一个唯一的GITHUB_TOKEN密钥以在您的工作流程中使用。需要配合 `permissions` 一起使用。
+<div v-click class="h-100 overflow-auto mt-1">
+
+<img src="assets/images/scene-2.png" width="530" />
 
 </div>
+
+</div>
+
+<div v-click class="absolute top-5 right-3">
+
+[案例地址](https://github.com/github-actions-templates/hexo) | [效果地址](https://github-actions-hexo-template.flc.io/)
 
 </div>
 
