@@ -98,7 +98,7 @@ jobs:
 
 <div class="flex gap-4">
 
-<div class="overflow-auto h-100">
+<div v-click  class="overflow-auto h-100">
 
 ```yaml
 name: Github Pages
@@ -156,6 +156,10 @@ jobs:
 [案例地址](https://github.com/github-actions-templates/hexo) | [效果地址](https://github-actions-hexo-template.flc.io/)
 
 </div>
+
+---
+
+TODO: 增加个截图
 
 ---
 
