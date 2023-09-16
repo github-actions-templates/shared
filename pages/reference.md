@@ -1,5 +1,6 @@
 ---
 layout: default
+hideInToc: true
 ---
 
 # 参考资料
