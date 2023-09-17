@@ -6,7 +6,6 @@ layout: default
 
 - 自动化构建和测试
 - 自动化部署
-- 发布软件包和文档
 - 定时任务和计划作业
 - 集成第三方服务
 
@@ -165,11 +164,58 @@ jobs:
 
 ---
 
-## 应用场景 <small>发布软件包和文档</small>
-
----
-
 ## 应用场景 <small>定时任务和计划作业</small>
+
+<div class="flex gap-4">
+
+<div v-click  class="overflow-auto h-100">
+
+```yaml
+name: Cron
+on:
+  schedule:
+    - cron: "0 0 * * *"
+    - cron: "0 12 * * *"
+    - cron: "39 14 * * *"
+
+env:
+  GOPROXY: "https://proxy.golang.org"
+
+jobs:
+  test:
+    name: "go test"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Go
+        uses: actions/setup-go@v3
+      - run: go version
+
+      - name: Run tests
+        run: cd go && go test ./... -v -covermode=atomic -race -coverprofile=coverage.txt
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+```
+</div>
+
+
+<div v-click class="h-100 overflow-auto mt-1">
+
+<img src="assets/images/scene-2.png" width="530" />
+
+</div>
+
+</div>
+
+<div v-click class="absolute top-5 right-3">
+
+[案例地址](https://github.com/github-actions-templates/hexo)
+
+</div>
 
 ---
 
