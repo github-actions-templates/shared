@@ -391,7 +391,7 @@ package main
 import "os"
 
 func main() {
-	if env, ok := os.LookupEnv("ENVIRONMENT"); !ok {
+	if env, ok := os.LookupEnv("o"); !ok {
 		panic("ENVIRONMENT is not set")
 	} else {
 		println(env)
@@ -409,3 +409,69 @@ func main() {
 
 #### 如果我要输入我的银行卡密码怎么办？
 
+<v-clicks>
+
+- 路径：`Settings -> Security -> Actions secrets and variables -> Actions -> New repository secret`
+
+</v-clicks>
+
+<div class="flex gap-4 mt-3">
+
+<img v-click src="assets/images/started-7.png" class="h-90" />
+
+<img v-click src="assets/images/started-8.png" class="h-90" />
+
+</div>
+
+---
+
+
+<div class="flex gap-4 h-80">
+
+<div v-click class="h-100 overflow-auto">
+
+```yaml
+name: Test Env
+
+on:
+  workflow_dispatch:
+    inputs:
+      test-jobs:
+        description: '测试 Env'
+
+env:
+  PWD: ${{ secrets.BANK_PASSWORD }}
+
+jobs:
+  pwd:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo The bank password is ${{ env.PWD }}
+```
+
+</div>
+
+
+<div v-click class="h-100 overflow-auto mt-1">
+
+<img src="assets/images/started-9.png" class="h-80" />
+
+</div>
+
+</div>
+
+<v-click>
+
+**适用场景：**
+
+</v-click>
+
+
+<v-clicks>
+
+- 单元测试：API 秘钥、地址等
+- 第三方服务：单测覆盖率（如：`codecov`）
+- 敏感信息：密码等
+- ……
+
+</v-clicks>
