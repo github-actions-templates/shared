@@ -12,7 +12,7 @@ env:
   UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
 
 jobs:
-  deploy:，。
+  deploy:
     name: Deploy
     runs-on: ubuntu-latest
 
