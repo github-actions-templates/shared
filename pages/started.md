@@ -178,6 +178,8 @@ jobs:
           gh issue edit $ISSUE_URL --add-label "triage"
 ```
 
+> 配合官方的 `gh` 命令工具效果更佳。
+
 </div>
 
 </div>
@@ -207,7 +209,7 @@ on:
 
 ---
 
-#### 工作流事件
+#### 常用工作流事件
 
 <div v-click>
 
@@ -253,6 +255,157 @@ Cron 语法：
 
 ## 上手指南 <small>任务和步骤</small>
 
+- 工作流运行由一个或多个 `jobs` 组成，默认情况下 **并行** 运行。
+- 可使用 `jobs.<job_id>.needs` 关键字定义对其他作业的依赖关系，来实现顺序运行。
+- 每个作业在 `runs-on` 指定的运行器环境中运行。
+
+---
+
+#### 一个 🌰
+
+<div class="flex gap-4">
+
+<div v-click class="h-100 overflow-auto">
+
+```yaml
+name: Test Jobs
+
+on:
+  workflow_dispatch:
+    inputs:
+      test-jobs:
+        description: '测试 Jobs'
+
+
+jobs:
+  jobs-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world! This is jobs-1
+
+  jobs-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world! This is jobs-2
+
+  jobs-3:
+    runs-on: ubuntu-latest
+    needs:
+      - jobs-1
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world! This is jobs-3, but after jobs-1
+```
+
+</div>
+
+
+<div v-click class="h-100 overflow-auto mt-1">
+
+<img src="assets/images/started-3.png" width="530" />
+
+</div>
+
+</div>
+
+
+<div v-click class="absolute top--1 right-3">
+
+[案例地址](https://github.com/github-actions-templates/example/actions/workflows/jobs.yml)
+
+</div>
+
 ---
 
 ## 上手指南 <small>使用环境变量和密钥</small>
+
+
+<div class="flex gap-4">
+
+<div v-click class="h-100 overflow-auto">
+
+```yaml
+name: Test Env
+
+on:
+  workflow_dispatch:
+    inputs:
+      test-jobs:
+        description: '测试 Env'
+
+env:
+  ENVIRONMENT: prod
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: dev
+    steps:
+      - run: echo The env is ${{ env.ENVIRONMENT }}
+
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo The env is ${{ env.ENVIRONMENT }}
+```
+
+</div>
+
+
+<div v-click class="h-100 overflow-auto mt-1">
+
+<img src="assets/images/started-4.png" width="530" />
+
+</div>
+
+</div>
+
+
+<div v-click class="absolute top--1 right-3">
+
+[案例地址](https://github.com/github-actions-templates/example/actions/workflows/env.yml)
+
+</div>
+
+---
+
+#### 补充
+
+<v-clicks>
+
+- 环境变量你可以理解为执行了：`export ENVIRONMENT=prod`
+- 支持编程语言中的获取，如：Go 语言的 `os.LookupEnv`
+
+</v-clicks>
+
+<div class="flex gap-4 mt-3">
+
+<div v-click>
+
+```go
+package main
+
+import "os"
+
+func main() {
+	if env, ok := os.LookupEnv("ENVIRONMENT"); !ok {
+		panic("ENVIRONMENT is not set")
+	} else {
+		println(env)
+	}
+}
+```
+
+</div>
+
+<div v-click><img src="assets/images/started-6.png" width="530" /></div>
+
+</div>
+
+---
+
+#### 如果我要输入我的银行卡密码怎么办？
+
