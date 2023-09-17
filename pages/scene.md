@@ -153,13 +153,15 @@ jobs:
 
 <div v-click class="absolute top-5 right-3">
 
-[案例地址](https://github.com/github-actions-templates/hexo) | [效果地址](https://github-actions-hexo-template.flc.io/)
+[案例地址](https://github.com/github-actions-templates/hexo)
 
 </div>
 
 ---
 
-TODO: 增加个截图
+[效果地址](https://github-actions-hexo-template.flc.io/)
+
+![](assets/images/scene-3.png)
 
 ---
 
