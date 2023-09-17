@@ -168,7 +168,9 @@ jobs:
 
 <div class="flex gap-4">
 
-<div v-click  class="overflow-auto h-100">
+<div>
+
+<div v-click class="overflow-auto h-75">
 
 ```yaml
 name: Cron
@@ -176,7 +178,7 @@ on:
   schedule:
     - cron: "0 0 * * *"
     - cron: "0 12 * * *"
-    - cron: "39 14 * * *"
+    - cron: "*/5 * * * *"
 
 env:
   GOPROXY: "https://proxy.golang.org"
@@ -202,6 +204,21 @@ jobs:
 ```
 </div>
 
+<v-click>
+
+**说明：**
+
+</v-click>
+
+<v-clicks>
+
+- 时区相关：基于 UTC 时区
+- 最短支持：每 5 分钟一次
+
+</v-clicks>
+
+</div>
+
 
 <div v-click class="h-100 overflow-auto mt-1">
 
@@ -213,7 +230,7 @@ jobs:
 
 <div v-click class="absolute top-5 right-3">
 
-[案例地址](https://github.com/github-actions-templates/hexo)
+[案例地址](https://github.com/github-actions-templates/example/blob/main/.github/workflows/cron.yml)
 
 </div>
 
