@@ -304,7 +304,7 @@ jobs:
 
 <div v-click class="h-100 overflow-auto mt-1">
 
-<img src="assets/images/started-3.png" width="530" />
+<img src="/assets/images/started-3.png" class="w-100" />
 
 </div>
 
@@ -357,7 +357,7 @@ jobs:
 
 <div v-click class="h-100 overflow-auto mt-1">
 
-<img src="assets/images/started-4.png" width="530" />
+<img src="/assets/images/started-4.png" width="530" />
 
 </div>
 
@@ -401,7 +401,7 @@ func main() {
 
 </div>
 
-<div v-click><img src="assets/images/started-6.png" width="530" /></div>
+<div v-click><img src="/assets/images/started-6.png" width="530" /></div>
 
 </div>
 
@@ -417,9 +417,9 @@ func main() {
 
 <div class="flex gap-4 mt-3">
 
-<img v-click src="assets/images/started-7.png" class="h-90" />
+<img v-click src="/assets/images/started-7.png" class="h-90" />
 
-<img v-click src="assets/images/started-8.png" class="h-90" />
+<img v-click src="/assets/images/started-8.png" class="h-90" />
 
 </div>
 
@@ -454,7 +454,7 @@ jobs:
 
 <div v-click class="h-100 overflow-auto mt-1">
 
-<img src="assets/images/started-9.png" class="h-80" />
+<img src="/assets/images/started-9.png" class="h-80" />
 
 </div>
 

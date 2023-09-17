@@ -79,7 +79,7 @@ jobs:
 
 <div v-click class="h-100 overflow-auto mt-1">
 
-<img src="assets/images/scene-1.png" width="530" />
+<img src="/assets/images/scene-1.png" width="530" />
 
 </div>
 
@@ -144,7 +144,7 @@ jobs:
 
 <div v-click class="h-100 overflow-auto mt-1">
 
-<img src="assets/images/scene-2.png" width="530" />
+<img src="/assets/images/scene-2.png" width="530" />
 
 </div>
 
@@ -160,7 +160,7 @@ jobs:
 
 [效果地址](https://github-actions-hexo-template.flc.io/)
 
-![](assets/images/scene-3.png)
+![](/assets/images/scene-3.png)
 
 ---
 
@@ -222,7 +222,7 @@ jobs:
 
 <div class="h-100 overflow-auto mt-1">
 
-<img v-click src="assets/images/scene-4.png" width="530" />
+<img v-click src="/assets/images/scene-4.png" width="530" />
 
 <v-click>
 
@@ -285,7 +285,7 @@ jobs:
 
 <div v-click class="h-70 overflow-auto">
 
-<img src="assets/images/scene-5.png" width="530" />
+<img src="/assets/images/scene-5.png" width="530" />
 
 </div>
 

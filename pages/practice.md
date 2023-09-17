@@ -122,7 +122,7 @@ func main() {
 
 ---
 
-<img v-click src="assets/images/practice-3.png" class="h-90"/>
+<img v-click src="/assets/images/practice-3.png" class="h-90"/>
 
 <v-click>
 
