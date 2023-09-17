@@ -220,9 +220,15 @@ jobs:
 </div>
 
 
-<div v-click class="h-100 overflow-auto mt-1">
+<div class="h-100 overflow-auto mt-1">
 
-<img src="assets/images/scene-2.png" width="530" />
+<img v-click src="assets/images/scene-4.png" width="530" />
+
+<v-click>
+
+> 实际操作下来，时间并不一定非常准时。
+
+</v-click>
 
 </div>
 
@@ -237,3 +243,61 @@ jobs:
 ---
 
 ## 应用场景 <small>集成第三方服务</small>
+
+
+<div class="flex gap-4">
+
+<div class="overflow-auto h-100">
+
+```yaml {all|17|20|27|all}
+name: Go Test
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "go/**"
+env:
+  GOPROXY: "https://proxy.golang.org"
+
+jobs:
+  test:
+    name: "go test"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Go
+        uses: actions/setup-go@v3
+      - run: go version
+
+      - name: Run tests
+        run: go test ./... -v -covermode=atomic -race -coverprofile=coverage.txt
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+```
+</div>
+
+
+<div class="h-100 overflow-auto mt-1">
+
+<div v-click class="h-70 overflow-auto">
+
+<img src="assets/images/scene-5.png" width="530" />
+
+</div>
+
+<div v-click class="mt-2">
+
+**Github Actions 第三方服务：**
+
+- Marketplace: https://github.com/marketplace?type=actions
+
+</div>
+
+
+</div>
+
+</div>
