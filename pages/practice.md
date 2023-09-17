@@ -7,6 +7,7 @@ layout: default
 - 使用徽章来标记 CI 状态
 - 使用缓存提高性能
 - 错误处理和调试
+- 容器化服务
 - 版本控制和代码审查
 - 效率和资源管理
 - 社区资源和扩展
@@ -48,6 +49,32 @@ layout: default
 ---
 
 ## 最佳实践 <small>错误处理和调试</small>
+
+---
+
+## 最佳实践 <small>容器化服务</small>
+
+```yaml
+name: Redis
+on: push
+
+jobs:
+  runner-job:
+    runs-on: ubuntu-latest
+    containers:
+      - image: redis
+
+    services:
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+    
+    steps:
+      - name: Run Redis
+        run: |
+          redis-cli ping
+```
 
 ---
 
