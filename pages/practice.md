@@ -10,7 +10,6 @@ layout: default
 - 容器化服务
 - 版本控制和代码审查
 - 效率和资源管理
-- 社区资源和扩展
 
 ---
 
@@ -69,7 +68,7 @@ jobs:
 
     services:
       redis:
-        image: redis
+        image: redis # Docker Hub 镜像名称
         ports:
           - 6379:6379
 
@@ -127,9 +126,18 @@ func main() {
 
 <v-click>
 
-[案例地址](https://github.com/github-actions-templates/example/blob/main/.github/workflows/redis.yml)
+**说明：**
+
 
 </v-click>
+
+
+<v-clicks>
+
+- 容器化服务仅限于在 `ubuntu` 系统下运行
+- [案例地址](https://github.com/github-actions-templates/example/blob/main/.github/workflows/redis.yml)
+
+</v-clicks>
 
 ---
 
