@@ -67,12 +67,8 @@ src: ./pages/reference.md
 ---
 
 ---
-layout: intro
+src: ./pages/qa.md
 ---
-
-# QA
-
-<p>“ChatGPT” 在手，解惑无忧</p>
 
 ---
 layout: intro
