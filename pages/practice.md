@@ -6,7 +6,7 @@ layout: default
 
 - 使用徽章来标记 CI 状态
 - 使用缓存提高性能
-- 错误处理和调试
+- GITHUB_TOKEN
 - 容器化服务
 - 版本控制和代码审查
 - 效率和资源管理
@@ -175,7 +175,78 @@ steps:
 
 ---
 
-## 最佳实践 <small>错误处理和调试</small>
+## 最佳实践 <small>`GITHUB_TOKEN`</small>
+
+**💡 自动令牌身份验证**
+
+<v-click>
+
+在每个工作流作业开始时，GitHub 会自动创建唯一的 `GITHUB_TOKEN` 机密以在工作流中使用。 可以使用 `GITHUB_TOKEN` 在工作流作业中进行身份验证。
+
+</v-click>
+
+<v-click>
+
+<hr class="opacity-10 mt-1 mb-1" />
+
+**那可以做什么？**
+
+</v-click>
+
+<v-clicks>
+
+- Github Cli 命令
+- 调用 Github REST API
+- 仓库写入，生成 `gh-page`
+- ……
+- 代码自动审查（发起 PR）
+- 接入 AI 呢？
+- ……
+
+</v-clicks>
+
+---
+
+#### 一个🌰
+
+<div class="flex gap-4">
+
+<div v-click class="overflow-auto h-100 w-100">
+
+```yaml
+name: issue welcome
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    permissions: # 设置权限
+      issues: write # 写入权限
+    steps:
+      - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
+```
+</div>
+
+<div>
+
+<img v-click src="/assets/images/practice-8.png" class="w-100"/>
+
+<div v-click>
+
+[案例地址](https://github.com/github-actions-templates/example/blob/main/.github/workflows/issue-welcome.yml)
+
+</div>
+
+</div>
+
+</div>
+
 
 ---
 
@@ -266,15 +337,3 @@ func main() {
 - [案例地址](https://github.com/github-actions-templates/example/blob/main/.github/workflows/redis.yml)
 
 </v-clicks>
-
----
-
-## 最佳实践 <small>版本控制和代码审查</small>
-
----
-
-## 最佳实践 <small>效率和资源管理</small>
-
----
-
-## 最佳实践 <small>社区资源和扩展</small>
