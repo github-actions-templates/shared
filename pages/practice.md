@@ -45,6 +45,134 @@ layout: default
 
 ## 最佳实践 <small>使用缓存提高性能</small>
 
+**基础版本**
+
+<div grid="~ cols-2 gap-4">
+
+<div v-click class="overflow-auto h-90">
+
+```yaml
+name: Cache
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mkdir
+        run: mkdir -p ~/test
+
+      - uses: actions/cache@v3 # 缓存服务
+        id: cache-test # 缓存 ID
+        with:
+          path: ~/test/ # 需要缓存的路径
+          key: ${{ runner.os }}-cache-test # 缓存唯一标识
+          restore-keys: |
+            ${{ runner.os }}-cache- # 备选标识（多个换行）
+
+      - run: sleep 10 && echo "Hello world" > ~/test/1.log
+        if: steps.cache-test.outputs.cache-hit != 'true' # 若缓存没命中
+
+      - run: sleep 10 && echo "Hello world" > ~/test/2.log
+        if: steps.cache-test.outputs.cache-hit != 'true'
+
+      - run: cat ~/test/*.log
+```
+
+</div>
+
+<div v-click>
+
+[案例地址](https://github.com/github-actions-templates/example/blob/main/.github/workflows/cache.yml)
+
+</div>
+
+</div>
+
+---
+
+<div grid="~ cols-2 gap-2">
+
+<div v-click>
+
+**首次（未命中缓存）**
+
+<img src="/assets/images/practice-4.png" class="h-70"/>
+
+</div>
+
+<div v-click>
+
+**第二次（命中缓存）**
+
+<img src="/assets/images/practice-5.png" class="h-70"/>
+
+</div>
+
+
+</div>
+
+<div v-click class="mt-4">
+
+<img src="/assets/images/practice-6.png" class="w-200"/>
+
+</div>
+
+---
+
+**一些第三方服务直接支持的缓存参考**
+
+| 包管理器                | 	用于缓存的 setup-* 操作                                        |
+|---------------------|----------------------------------------------------------|
+| npm、Yarn、pnpm       | 	[setup-node](https://github.com/actions/setup-node)     |
+| pip、pipenv、Poetry   | 	[setup-python](https://github.com/actions/setup-python) |
+| Go `go.sum`         | 	[setup-go](https://github.com/actions/setup-go)         |
+| PHP `composer.lock` | 	[setup-php](https://github.com/shivammathur/setup-php)  |
+| ……                  | 	                                                        |
+
+<div v-click class="mt-4">
+
+> 一般情况下，我们会结合上下文等实现缓存 key 的命名。如：  
+> `${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}`
+
+</div>
+
+---
+
+**一个简单的 🌰**
+
+```yaml
+steps:
+  - uses: actions/checkout@v4
+  - uses: actions/setup-go@v4
+    with:
+      go-version: '1.21'
+      check-latest: true
+      cache-dependency-path: |
+             subdir/go.sum
+             tools/go.sum
+    # cache-dependency-path: "**/*.sum"
+
+  - run: go run hello.go
+```
+
+---
+
+如果你想手动清理缓存：
+
+<img src="/assets/images/practice-7.png" class="w-200"/>
+
+<v-click>
+
+**其他小知识：**
+
+- 存储库中的多个工作流运行可以**共享缓存**。 可以从**同一存储库和分支**的另一个工作流运行访问和还原为工作流运行中的分支创建的缓存。
+
+</v-click>
+
 ---
 
 ## 最佳实践 <small>错误处理和调试</small>
