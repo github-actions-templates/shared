@@ -85,6 +85,6 @@ hideInToc: true
 
 <div v-click class="opacity-50">
 
-[幻灯片地址](https://github-actions.flc.io/) | [仓库地址](https://github.com/github-actions-templates/shared)
+[幻灯片地址](https://github-actions.flc.io/)  |  [仓库地址](https://github.com/github-actions-templates/shared)
 
 </div>
