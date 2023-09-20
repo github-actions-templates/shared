@@ -8,6 +8,7 @@ layout: default
 - 节假日
 - 五子棋
 - 跨仓库使用
+- uptime
 
 ---
 
@@ -394,8 +395,15 @@ jobs:
 
 </div>
 
-
 </div>
+
+---
+
+## 案例分享 <small>[uptime](https://github.com/upptime/upptime)</small>
+
+定时请求网站状态，并可视化相关数据。[案例地址](https://status.flc.io/)、[案例仓库地址](https://github.com/flc1125/status.flc.io)
+
+<iframe v-click src="https://status.flc.io" class="w-210 h-95"></iframe>
 
 ---
 
