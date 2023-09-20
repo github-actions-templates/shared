@@ -501,6 +501,31 @@ hideToc: false
 </div>
 
 ---
+
+## 案例分享 <small>本教程</small>
+
+基于 [`slidev`](https://github.com/slidevjs/slidev) 构建的 HTML， 发布到云存储，实现 Web 访问。<span v-click>—— 🤖 主要是买不起服务器</span>
+
+<div v-click class="mt-2">
+
+
+| 技术栈/服务                                                                                                        | 用途                                 |
+|---------------------------------------------------------------------------------------------------------------|------------------------------------|
+| [`slidev`](https://github.com/slidevjs/slidev)                                                                | 实现本幻灯片                             |
+| [Github Actions](https://github.com/github-actions-templates/shared/blob/master/.github/workflows/deploy.yml) | CI/CD                              |
+| [又拍云](https://www.upyun.com/)                                                                                 | 提供云存储、CDN 加速、HTTPS 证书              |
+| [namecheap](https://namecheap.com/)                                                                           | 域名服务商                              |
+| [upx](https://github.com/upx/upx)                                                                             | 通过 Github Actions 将构建的 HTML 同步到云存储 |
+
+</div>
+
+<v-click>
+
+> **云服务商费用参考：** 含博客、知识库、图片库等资料；自 2018 年起，共充值 100 元，截至 2023-09-21，余额：39.15 元。
+
+</v-click>
+
+---
 layout: center
 class: text-center
 hideToc: false
