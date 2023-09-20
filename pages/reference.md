@@ -10,10 +10,12 @@ hideInToc: true
 - 官方的一些 Actions：https://github.com/actions
 - Github Actions 本地调试（⭐48K）：https://github.com/nektos/act
 - 搭配官方的 CLI 工具：https://github.com/cli/cli
+- 用于开发 Github Actions 的一些工具包：https://github.com/actions/toolkit
+- 快速构建 Github Pages：https://github.com/peaceiris/actions-gh-pages
 
 ---
 
-**一些小知识：**
+**无关紧要的小提醒：**
 
 - 当全站 Github Actions 处理量大时，可能会存在 Queue 的情况； 
 

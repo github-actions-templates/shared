@@ -77,4 +77,8 @@ hideInToc: true
 
 # The End
 
-<p>Thanks</p>
+<p>LGTM</p>
+
+<p v-click>据说它起源于 21 世纪初的谷歌，最初是为了在代码审查中对其他人的工作给予积极的反馈。</p>
+
+<p v-click>现常用于开源界，在 PR 通过 Code Review 后，给与的一个认可。同样：也意味该 PR 可以合并到主分支。</p>

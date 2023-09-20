@@ -9,6 +9,7 @@ layout: default
 - 五子棋
 - 跨仓库使用
 - uptime
+- 单测覆盖率
 
 ---
 
@@ -407,6 +408,102 @@ jobs:
 
 ---
 
-## [Quarto](https://quarto.org/) - 闲聊机器人
+## 案例分享 <small>[单测覆盖率](https://about.codecov.io/)</small>
 
-## 
+推送代码后，触发单测执行，并上报至第三方平台，便于分析查看。[案例地址](https://github.com/go-packagist/go-kratos-components)
+
+<div v-click class="flex gap-1">
+
+<span class="opacity-20">[![Go Version](https://badgen.net/github/release/go-packagist/go-kratos-components/stable)](https://github.com/go-packagist/go-kratos-components/releases)</span>
+
+<span class="opacity-20">[![GoDoc](https://pkg.go.dev/badge/github.com/go-packagist/go-kratos-components)](https://pkg.go.dev/github.com/go-packagist/go-kratos-components)</span>
+
+[![codecov](https://codecov.io/gh/go-packagist/go-kratos-components/branch/master/graph/badge.svg?token=5TWGQ9DIRU)](https://codecov.io/gh/go-packagist/go-kratos-components)
+
+<span class="opacity-20">[![Go Report Card](https://goreportcard.com/badge/github.com/go-packagist/go-kratos-components)](https://goreportcard.com/report/github.com/go-packagist/go-kratos-components)</span>
+
+<span>[![tests](https://github.com/go-packagist/go-kratos-components/actions/workflows/go.yml/badge.svg)](https://github.com/go-packagist/go-kratos-components/actions/workflows/go.yml)</span>
+
+<span class="opacity-20">[![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)</span>
+
+</div>
+
+<div class="flex gap-4">
+
+<div v-click class="overflow-auto h-80">
+
+```yaml
+name: Go Test
+on:
+  push:
+    branches: [ master, feature/* ]
+  pull_request:
+    branches: [ master ]
+env:
+  GOPROXY: "https://proxy.golang.org"
+
+jobs:
+  test:
+    name: "go test"
+    strategy:
+      matrix:
+        go-version: [ 1.18.x, 1.19.x, 1.20.x, 1.21.x ]
+        platform: [ ubuntu-latest ]
+    runs-on: ${{ matrix.platform }}
+
+    services:
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
+        ports:
+          - 6379:6379
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ matrix.go-version }}
+          cache: true
+          cache-dependency-path: ./go.sum
+      - run: go version
+
+      - name: Run tests
+        run: go test ./... -v -covermode=atomic -race -coverprofile=coverage.txt
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+```
+
+</div>
+
+<div v-click>
+
+<img src="/assets/images/case-6.png" class="h-80 mt-1" />
+
+</div>
+
+</div>
+
+---
+layout: center
+class: text-center
+hideToc: false
+---
+
+<div>
+
+<img src="/assets/images/case-7.png" class="h-120 mt-1" />
+
+</div>
+
+---
+layout: center
+class: text-center
+hideToc: false
+---
+
+更多案例……
