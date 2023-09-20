@@ -4,17 +4,51 @@ layout: default
 
 # 案例分享
 
-- 五子棋
-- 节假日
 - 翻译助手
+- 节假日
+- 五子棋
+- 跨仓库使用
 
 ---
 
-## 案例分享 <small>[五子棋](https://github.com/frostming/frostming)</small>
 
-基于创建 `issue` 触发 Github Actions 更新 `README.md`
+## 案例分享 <small>翻译助手</small>
 
-<img src="/assets/images/case-1.png" class="h-80 mt-4" />
+基于 `issue` 的内容，识别中文，自动翻译成英文。
+
+
+<div class="flex gap-4">
+
+<div v-click class="overflow-auto h-90">
+
+```yaml
+name: 'issue-translator'
+on:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: usthe/issues-translate-action@v2.7
+        with:
+          IS_MODIFY_TITLE: true
+          CUSTOM_BOT_NOTE: Bot detected the issue body's language is not English, translate it automatically. 👯👭🏻🧑‍🤝‍🧑👫🧑🏿‍🤝‍🧑🏻👩🏾‍🤝‍👨🏿👬🏿
+          BOT_GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+```
+
+</div>
+
+<div v-click>
+
+<img src="/assets/images/case-2.png" class="mt-4 w-100" />
+
+</div>
+
+</div>
 
 ---
 
@@ -257,11 +291,113 @@ jobs:
 
 ---
 
-## 案例分享 <small>贪吃蛇</small>
+## 案例分享 <small>[五子棋](https://github.com/frostming/frostming)</small>
 
-## 案例分享 <small>翻译助手</small>
+基于创建 `issue` 触发 Github Actions 更新 `README.md`
 
-> 衍生出自动回复机器人？自动评审机器人？
+<div class="flex gap-4">
+
+<div v-click class="overflow-auto h-90">
+
+```yaml
+name: "Gomoku"
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  move:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'gomoku|')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Cache PIP
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-py38
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Play
+        env:
+          REPO: ${{ github.repository }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          PLAYER: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          python -m chess.runner
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+```
+
+</div>
+
+<div v-click>
+
+<img src="/assets/images/case-1.png" class="h-80 mt-4" />
+
+</div>
+
+</div>
+
+
+---
+
+## 案例分享 <small>跨仓库使用</small>
+
+`Laravel` 的 `workflows`，统一托管到 [.github](https://github.com/laravel/.github) 下维护。
+
+
+<div class="flex gap-4">
+
+<div v-click>
+
+<img src="/assets/images/case-3.png" class="h-80 mt-1" />
+
+</div>
+
+<div v-click class="overflow-auto h-90">
+
+[`laravel/framework`](https://github.com/laravel/framework/blob/10.x/.github/workflows/pull-requests.yml)
+
+
+```yaml
+name: pull requests
+
+on:
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  uneditable:
+    uses: laravel/.github/.github/workflows/pull-requests.yml@main
+```
+
+</div>
+
+
+</div>
+
+---
 
 ## [Quarto](https://quarto.org/) - 闲聊机器人
 
