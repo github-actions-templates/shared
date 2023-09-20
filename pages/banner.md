@@ -9,13 +9,11 @@ class: p-0
 
 ---
 layout: center
+class: text-center
 hideInToc: false
 ---
 
-<div class="text-center">
 
-## 说  明
+<h2>说  明</h2>
 
-### 本 内 容 适 合 新 手 教 程
-
-</div>
+<p>本 内 容 适 合 新 手</p>

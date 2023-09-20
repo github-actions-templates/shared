@@ -4,7 +4,7 @@ colorSchema: dark
 highlighter: shiki
 lineNumbers: false
 info: false
-transition: slide-left
+transition: fade-out
 title: Github Actions
 favicon: /favicon.svg
 drawings:
