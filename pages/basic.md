@@ -7,7 +7,7 @@ layout: default
 - Github Actions 是什么？
 - Features
 - Pricing
-- 基础概念
+- 简单演示
 
 ---
 

@@ -9,6 +9,7 @@ layout: default
 - 五子棋
 - 跨仓库使用
 - uptime
+- 丰富个人主页
 - 单测覆盖率
 
 ---
@@ -497,6 +498,29 @@ hideToc: false
 <div>
 
 <img src="/assets/images/case-7.png" class="h-120 mt-1" />
+
+</div>
+
+---
+
+## 案例分享 <small>丰富个人主页</small>
+
+
+<v-clicks>
+
+![BEPb's github activity graph](https://raw.githubusercontent.com/BEPb/BEPb/output/github-contribution-grid-snake.svg)
+
+![](https://count.getloli.com/get/@BEPb.github.readme)
+
+[案例地址](https://github.com/BEPb)
+
+</v-clicks>
+
+---
+
+<div class="w-210 h-120 overflow-auto">
+
+![](/assets/images/basic-2.png)
 
 </div>
 
