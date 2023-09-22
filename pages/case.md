@@ -510,8 +510,6 @@ hideToc: false
 
 ![BEPb's github activity graph](https://raw.githubusercontent.com/BEPb/BEPb/output/github-contribution-grid-snake.svg)
 
-![](https://count.getloli.com/get/@BEPb.github.readme)
-
 [案例地址](https://github.com/BEPb)
 
 </v-clicks>
