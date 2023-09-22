@@ -71,10 +71,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cache- # 备选标识（多个换行）
 
-      - run: sleep 10 && echo "Hello world" > ~/test/1.log
+      - run: sleep 5 && echo "Hello world" > ~/test/1.log
         if: steps.cache-test.outputs.cache-hit != 'true' # 若缓存没命中
 
-      - run: sleep 10 && echo "Hello world" > ~/test/2.log
+      - run: sleep 5 && echo "Hello world" > ~/test/2.log
         if: steps.cache-test.outputs.cache-hit != 'true'
 
       - run: cat ~/test/*.log
