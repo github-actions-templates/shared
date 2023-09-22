@@ -8,8 +8,6 @@ layout: default
 - 使用缓存提高性能
 - GITHUB_TOKEN
 - 容器化服务
-- 版本控制和代码审查
-- 效率和资源管理
 
 ---
 
